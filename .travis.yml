@@ -5,7 +5,8 @@ jobs:
       - os: linux
         before_install:
           - apt update
-          - apt install -y cmake pkg-config libssl-dev git build-essential clang libclang-dev curl 
+          - apt install -y cmake pkg-config libssl-dev git build-essential clang libclang-dev curl  # substrate-node deps
+          - apt-get install libclang-dev llvm-dev                                                   # manta node deps
         before_script:
           - rustup target add wasm32-unknown-unknown --toolchain nightly
         script:
@@ -16,6 +17,7 @@ jobs:
         before_install:
           - apt update
           - apt install -y cmake pkg-config libssl-dev git build-essential clang libclang-dev curl 
+          - apt-get install libclang-dev llvm-dev
         before_script:
           - rustup target add wasm32-unknown-unknown --toolchain nightly
         script:
@@ -26,6 +28,7 @@ jobs:
         before_install:
           - apt update
           - apt install -y cmake pkg-config libssl-dev git build-essential clang libclang-dev curl 
+          - apt-get install libclang-dev llvm-dev
         before_script:
           - rustup target add wasm32-unknown-unknown --toolchain nightly
         script:
@@ -39,6 +42,7 @@ jobs:
         before_install:
           - apt update
           - apt install -y cmake pkg-config libssl-dev git build-essential clang libclang-dev curl 
+          - apt-get install libclang-dev llvm-dev
           - curl -L https://github.com/mozilla/grcov/releases/latest/download/grcov-linux-x86_64.tar.bz2 | tar jxf -
         before_script:
           - rustup component add llvm-tools-preview
