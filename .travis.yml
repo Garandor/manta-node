@@ -8,6 +8,8 @@ rust:
 cache: cargo
 fast_finish: true
 include:
+      before_script:
+        - rustup target add wasm32-unknown-unknown --toolchain nightly
       script:
         - export RUST_BACKTRACE=1 && cargo build --verbose
         - export RUST_BACKTRACE=1 && cargo test --verbose
@@ -22,6 +24,7 @@ jobs:
         - curl -L https://github.com/mozilla/grcov/releases/latest/download/grcov-linux-x86_64.tar.bz2 | tar jxf -
       before_script:
 #        - cargo install grcov # failing, install from tarball
+        - rustup target add wasm32-unknown-unknown --toolchain nightly
         - rustup component add llvm-tools-preview
       script:
         - export CARGO_INCREMENTAL=0 &&
