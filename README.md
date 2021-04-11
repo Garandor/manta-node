@@ -1,4 +1,4 @@
-# MANTA NODE
+# MANTA NODE!
 
 [![Build Status](https://travis-ci.com/Garandor/manta-node.svg?branch=master)](https://travis-ci.com/Garandor/manta-node)
 [![codecov](https://codecov.io/gh/Garandor/manta-node/branch/master/graph/badge.svg)](https://codecov.io/gh/Garandor/manta-node)
