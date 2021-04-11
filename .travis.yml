@@ -29,8 +29,8 @@ jobs:
       # - fast_finish: true
       # Coverage build only on master and PRs
       - if: branch = master # require the branch name to be master (note for PRs this is the base branch name)
-      - name: Coverage
-      - before_install:
+        name: Coverage
+        before_install:
           - curl -L https://github.com/mozilla/grcov/releases/latest/download/grcov-linux-x86_64.tar.bz2 | tar jxf -
         before_script:
   #        - cargo install grcov # failing, install from tarball
