@@ -4,25 +4,22 @@ jobs:
     include:
       - rust: nightly
         os: linux
-        before_script:
-          - rustup target add wasm32-unknown-unknown --toolchain nightly
         script:
+          - rustup target add wasm32-unknown-unknown --toolchain nightly
           - export RUST_BACKTRACE=1 && cargo build --verbose
           - export RUST_BACKTRACE=1 && cargo test --verbose
           - export RUST_BACKTRACE=1 && cargo doc --no-deps --verbose
       - rust: nightly
         os: windows
-        before_script:
-          - rustup target add wasm32-unknown-unknown --toolchain nightly
         script:
+          - rustup target add wasm32-unknown-unknown --toolchain nightly
           - export RUST_BACKTRACE=1 && cargo build --verbose
           - export RUST_BACKTRACE=1 && cargo test --verbose
           - export RUST_BACKTRACE=1 && cargo doc --no-deps --verbose
       - rust: nightly
         os: osx
-        before_script:
-          - rustup target add wasm32-unknown-unknown --toolchain nightly
         script:
+          - rustup target add wasm32-unknown-unknown --toolchain nightly
           - export RUST_BACKTRACE=1 && cargo build --verbose
           - export RUST_BACKTRACE=1 && cargo test --verbose
           - export RUST_BACKTRACE=1 && cargo doc --no-deps --verbose
@@ -33,10 +30,9 @@ jobs:
         before_install:
           - curl -L https://github.com/mozilla/grcov/releases/latest/download/grcov-linux-x86_64.tar.bz2 | tar jxf -
         before_script:
-  #        - cargo install grcov # failing, install from tarball
-          - rustup target add wasm32-unknown-unknown --toolchain nightly
           - rustup component add llvm-tools-preview
         script:
+          - rustup target add wasm32-unknown-unknown --toolchain nightly
           - export CARGO_INCREMENTAL=0 &&
             export RUSTFLAGS="-Zinstrument-coverage" &&
             export LLVM_PROFILE_FILE="mantanode-%p-%m.profraw" &&
