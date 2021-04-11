@@ -1,5 +1,8 @@
 # MANTA NODE
 
+[![Build Status](https://travis-ci.com/Garandor/manta-node.svg?branch=master)](https://travis-ci.com/Garandor/manta-node)
+[![codecov](https://codecov.io/gh/Garandor/manta-node/branch/master/graph/badge.svg)](https://codecov.io/gh/Garandor/manta-node)
+
 This repo is a fresh FRAME-based [Substrate](https://www.substrate.io/) node, forked from `substrate-developer-hub/substrate-node-templte` :rocket:
 It links to [pallet-manta-dap](https://github.com/Manta-Network/pallet-manta-dap) for all Manta-APIs.
 See [pallet-manta-dap/readme](https://github.com/Manta-Network/pallet-manta-dap/blob/master/README.md) for more details.
