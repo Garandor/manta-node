@@ -3,6 +3,9 @@ rust: nightly
 jobs:
     include:
       - os: linux
+        before_install:
+          - apt update
+          - apt install -y cmake pkg-config libssl-dev git build-essential clang libclang-dev curl 
         before_script:
           - rustup target add wasm32-unknown-unknown --toolchain nightly
         script:
@@ -10,6 +13,9 @@ jobs:
           - export RUST_BACKTRACE=1 && cargo test --verbose
           - export RUST_BACKTRACE=1 && cargo doc --no-deps --verbose
       - os: windows
+        before_install:
+          - apt update
+          - apt install -y cmake pkg-config libssl-dev git build-essential clang libclang-dev curl 
         before_script:
           - rustup target add wasm32-unknown-unknown --toolchain nightly
         script:
@@ -17,6 +23,9 @@ jobs:
           - export RUST_BACKTRACE=1 && cargo test --verbose
           - export RUST_BACKTRACE=1 && cargo doc --no-deps --verbose
       - os: osx
+        before_install:
+          - apt update
+          - apt install -y cmake pkg-config libssl-dev git build-essential clang libclang-dev curl 
         before_script:
           - rustup target add wasm32-unknown-unknown --toolchain nightly
         script:
@@ -28,6 +37,8 @@ jobs:
       - if: branch = master # require the branch name to be master (note for PRs this is the base branch name)
         name: Coverage
         before_install:
+          - apt update
+          - apt install -y cmake pkg-config libssl-dev git build-essential clang libclang-dev curl 
           - curl -L https://github.com/mozilla/grcov/releases/latest/download/grcov-linux-x86_64.tar.bz2 | tar jxf -
         before_script:
           - rustup component add llvm-tools-preview
